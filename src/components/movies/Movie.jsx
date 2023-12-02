@@ -4,15 +4,12 @@ import { Link } from "react-router-dom"
 
 export const Movie = () => {
   const { id } = useParams()
-  console.log(id)
   const [movieDetails, setMovieDetails] = useState(null);
   const apiKey = "ea6a347864d3baf0357cebd9eb28097c"
-
-
+  
   useEffect(() => {
     
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
-    console.log(url)
 
     fetch(url)
         .then(response => {
@@ -38,12 +35,10 @@ export const Movie = () => {
          <Link to="/"> <button>Back to movies</button> </Link>
           <div className="movie-content">
               <img src={posterUrl} alt={movieDetails.title} className="movie-poster" />
-              
               <div className="movie-info">
                   <h1>{movieDetails.title}</h1>
                   <p><strong>Rating: {movieDetails.vote_average.toFixed(1)} / 10</strong></p>
                   <p>{movieDetails.overview}</p>
-                  
               </div>
           </div>
       </div>
