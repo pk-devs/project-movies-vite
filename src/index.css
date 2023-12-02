@@ -5,9 +5,138 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border-radius: 20px;
+  color:rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+button:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+
+.person {
+    padding: 10px;
+}
+
+.known-for {
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+.movie-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.movie-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* semi-transparent overlay */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.movie-container:hover .overlay {
+  opacity: 1;
+}
+
+.movie-details {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.movie-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.movie-poster {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.movie-info {
+  max-width: 50%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  padding: 20px; 
+  border-radius: 5px; 
+}
+
+.movie-info h1, p {
+  margin: 10px; 
+
+}
+
+/* Additional styles for responsiveness and aesthetics */
+@media (max-width: 1166px) {
+  .grid-container2 {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-info {
+      max-width: 100%;
+  }
+
+  .movie-poster {
+      width: 150px;
+  }
+
+  .grid-container2 {
+    grid-template-columns: repeat(1, 1fr); 
+
+  }
+
+}
+
